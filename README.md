@@ -198,5 +198,7 @@ http {
 
 Para realizar alterações no versão base das imagens do backend, frontend ou nginx, altere os arquivos correspondentes em cada um dos arquivos **Dockerfile** de cada diretorio (**backend e frontend**) ou no **docker-compose.yml**, conforme necessário. Para realizar alterações nas variáveis de ambiente, devemos alterar no arquivo **docker-compose.yml**. Após realizar estas alterações, execute o comando abaixo (dentro do diretorio do projeto) para aplicar estas alterações.
 
-```docker compose down```
-```docker compose up -d```
+```
+docker compose down
+docker compose up -d
+```
