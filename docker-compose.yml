@@ -10,8 +10,6 @@ services:
       - REACT_APP_BACKEND_URL=http://localhost
     depends_on:
       - guess_game
-    ports:
-      - 3000
     networks:
       - game-network
 
@@ -38,8 +36,6 @@ services:
       timeout: 5s
       retries: 3
       start_period: 20s
-    ports:
-      - 5000
     networks:
       - game-network
 
@@ -53,8 +49,6 @@ services:
       POSTGRES_DB: prjdb
     volumes:
       - pg_data:/var/lib/postgresql/data
-    ports:
-      - 5432
     networks:
       - game-network
 
