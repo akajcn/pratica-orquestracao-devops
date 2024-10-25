@@ -1,4 +1,3 @@
-version: '3.8'
 # Container do serviço do frontendi
 services:
   frontend:
@@ -27,13 +26,13 @@ services:
       - FLASK_DB_NAME=prjdb
       - FLASK_DB_HOST=postgres
       - FLASK_DB_PORT=5432
-    scale: 2
+    scale: 3
     depends_on:
       - postgres
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
-      interval: 10s
-      timeout: 5s
+      test: curl --fail http://localhost:5000 || exit 1
+      interval: 20s
+      timeout: 10s
       retries: 3
       start_period: 20s
     networks:
